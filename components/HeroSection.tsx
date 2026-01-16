@@ -119,7 +119,7 @@ export default function HeroSection({
         {/* Scroll Indicator */}
         {size === "full" && (
           <div 
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce"
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden"
             style={{ animationDelay: "1s" }}
           >
             <div className="w-6 h-10 border-2 border-white/40 rounded-full flex items-start justify-center p-2">

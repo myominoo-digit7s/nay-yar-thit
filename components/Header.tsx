@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -27,7 +28,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        scrolled || mobileMenuOpen
           ? "bg-white/95 backdrop-blur-md shadow-lg"
           : "bg-transparent"
       }`}
@@ -37,14 +38,24 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className={`text-xl font-bold tracking-tight transition-colors ${
-              scrolled ? "text-primary-700" : "text-white"
-            }`}
+            className="flex items-center gap-3"
           >
-            <span className="block">NAY YAR THIT</span>
-            <span className="block text-xs font-normal tracking-wider opacity-80">
-              TRAVEL & TOURS
-            </span>
+            <Image
+              src="/logo.png"
+              alt="NAY YAR THIT Logo"
+              width={48}
+              height={48}
+              className="w-12 h-12 object-contain"
+              priority
+            />
+            <div className={`transition-colors ${
+              scrolled || mobileMenuOpen ? "text-primary-700" : "text-white"
+            }`}>
+              <span className="block text-xl font-bold tracking-tight">NAY YAR THIT</span>
+              <span className="block text-xs font-normal tracking-wider opacity-80">
+                TRAVEL & TOURS
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -79,17 +90,17 @@ export default function Header() {
             <div className="w-6 h-5 relative flex flex-col justify-between">
               <span
                 className={`w-full h-0.5 rounded-full transition-all duration-300 ${
-                  scrolled ? "bg-neutral-800" : "bg-white"
+                  scrolled || mobileMenuOpen ? "bg-neutral-800" : "bg-white"
                 } ${mobileMenuOpen ? "rotate-45 translate-y-2" : ""}`}
               />
               <span
                 className={`w-full h-0.5 rounded-full transition-all duration-300 ${
-                  scrolled ? "bg-neutral-800" : "bg-white"
+                  scrolled || mobileMenuOpen ? "bg-neutral-800" : "bg-white"
                 } ${mobileMenuOpen ? "opacity-0" : ""}`}
               />
               <span
                 className={`w-full h-0.5 rounded-full transition-all duration-300 ${
-                  scrolled ? "bg-neutral-800" : "bg-white"
+                  scrolled || mobileMenuOpen ? "bg-neutral-800" : "bg-white"
                 } ${mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
               />
             </div>
@@ -99,7 +110,7 @@ export default function Header() {
         {/* Mobile Menu */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-300 ${
-            mobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            mobileMenuOpen ? " opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <div className="py-4 space-y-1 bg-white rounded-2xl shadow-xl my-2 px-4">

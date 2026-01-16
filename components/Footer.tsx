@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -26,13 +27,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block">
-              <h3 className="text-xl font-bold text-white tracking-tight">
-                NAY YAR THIT
-              </h3>
-              <p className="text-xs tracking-wider text-primary-400 mt-1">
-                FUTURE COMPANY LIMITED
-              </p>
+            <Link href="/" className="inline-flex items-center gap-3">
+              <Image
+                src="/logo.png"
+                alt="NAY YAR THIT Logo"
+                width={48}
+                height={48}
+                className="w-12 h-12 object-contain"
+              />
+              <div>
+                <h3 className="text-xl font-bold text-white tracking-tight">
+                  NAY YAR THIT
+                </h3>
+                <p className="text-xs tracking-wider text-primary-400 mt-1">
+                  FUTURE COMPANY LIMITED
+                </p>
+              </div>
             </Link>
             <p className="mt-6 text-sm leading-relaxed text-neutral-400">
               Your trusted partner for travel and tour services in Myanmar and
