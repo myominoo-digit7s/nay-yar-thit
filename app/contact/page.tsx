@@ -236,13 +236,39 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section Placeholder */}
+      {/* Map Section */}
       <section className="py-16 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-neutral-200 rounded-2xl h-96 flex items-center justify-center">
-            <div className="text-center">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-neutral-800 mb-2">
+              Find Us
+            </h2>
+            <p className="text-neutral-600">
+              Tachileik, Shan State, Myanmar
+            </p>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-neutral-200">
+            <iframe
+              title="NAY YAR THIT Office Location"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=99.87784920927256%2C20.440058302979855%2C99.89784920927256%2C20.460058302979855&layer=mapnik&marker=20.450058302979855%2C99.88784920927256"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+            />
+          </div>
+          <div className="mt-4 text-center">
+            <a
+              href="https://www.openstreetmap.org/?mlat=20.450058302979855&mlon=99.88784920927256#map=16/20.4501/99.8878"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium transition-colors"
+            >
               <svg
-                className="w-16 h-16 text-neutral-400 mx-auto mb-4"
+                className="w-5 h-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -250,23 +276,12 @@ export default function ContactPage() {
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1.5}
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                 />
               </svg>
-              <p className="text-neutral-500">
-                Tachileik, Shan State, Myanmar
-              </p>
-              <p className="text-sm text-neutral-400 mt-2">
-                Interactive map can be added here
-              </p>
-            </div>
+              View Larger Map
+            </a>
           </div>
         </div>
       </section>
