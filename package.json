@@ -1,7 +1,8 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
+  "name": "nay-yar-thit-travel",
+  "version": "1.0.0",
   "private": true,
+  "description": "NAY YAR THIT FUTURE COMPANY LIMITED - Travel Agency & Tour Operator Website",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
