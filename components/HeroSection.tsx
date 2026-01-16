@@ -24,7 +24,7 @@ export default function HeroSection({
   tagline = "NAY YAR THIT FUTURE COMPANY LIMITED",
   primaryCTA = { text: "Book Your Trip", href: "/reservations" },
   secondaryCTA = { text: "View Tours", href: "/tours" },
-  backgroundImage = "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop",
+  backgroundImage = "https://images.unsplash.com/photo-1583257242616-b4c5a5dee7d0?q=80&w=1483&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   overlay = true,
   size = "full",
 }: HeroSectionProps) {
