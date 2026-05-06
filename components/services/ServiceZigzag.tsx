@@ -46,7 +46,7 @@ export default function ServiceZigzag({ services }: ServiceZigzagProps) {
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
-                {/* {service.type === 'external' ? (
+                {service.type === 'external' ? (
                   <a
                     href={service.externalUrl}
                     target="_blank"
@@ -60,25 +60,22 @@ export default function ServiceZigzag({ services }: ServiceZigzagProps) {
                   </a>
                 ) : (
                   <Link
-                    href={`/services/${service.slug}`}
+                    href="/contact"
                     className="inline-flex items-center px-8 py-4 bg-neutral-900 text-white font-bold rounded-2xl hover:bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-primary-600/25 group"
                   >
-                    Explore Details
+                    Consult Now
                     <svg className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </Link>
-                )} */}
+                )}
 
-                <Link
+                {/* <Link
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-neutral-900 text-white font-bold rounded-2xl hover:bg-primary-600 transition-all duration-300 shadow-lg hover:shadow-primary-600/25 group"
+                  className="inline-flex items-center px-8 py-4 bg-white text-neutral-900 border-2 border-neutral-100 font-bold rounded-2xl hover:border-primary-600 hover:text-primary-600 transition-all duration-300"
                 >
                   Consult Now
-                  <svg className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
