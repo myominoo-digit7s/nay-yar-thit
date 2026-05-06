@@ -36,7 +36,7 @@ export const services: Service[] = [
     id: 'travel-logistics',
     name: 'Transportation & Lodging Logistics',
     slug: 'transportation-lodging-logistics',
-    description: 'Provide complete services for international flights, ground transportation, and curated accommodation bookings, including visa assistance, to support entire travel systems.',
+    description: 'Provide complete services for international flights, ground transportation, and curated accommodation bookings, to support entire travel systems.',
     type: 'internal',
     category: 'travel',
     coverImage: '/images/services/travel_tour_section_03.jpg',
