@@ -3,10 +3,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Tours", href: "/tours" },
+  { name: "Services", href: "/services" },
   { name: "Destinations", href: "/destinations" },
   { name: "Reservations", href: "/reservations" },
   { name: "About Us", href: "/about" },
@@ -16,6 +18,7 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +27,11 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const isActive = (path: string) => {
+    if (path === "/" && pathname !== "/") return false;
+    return pathname.startsWith(path);
+  };
 
   return (
     <header
@@ -60,17 +68,27 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex lg:items-center lg:gap-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary-500 ${
-                  scrolled ? "text-neutral-700" : "text-white"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item) => {
+              const active = isActive(item.href);
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`text-sm font-medium transition-all relative py-2 ${
+                    scrolled 
+                      ? active ? "text-primary-600" : "text-neutral-700 hover:text-primary-500"
+                      : active ? "text-primary-300" : "text-white hover:text-primary-200"
+                  }`}
+                >
+                  {item.name}
+                  {active && (
+                    <span className={`absolute bottom-0 left-0 w-full h-0.5 rounded-full transition-all ${
+                      scrolled ? "bg-primary-600" : "bg-primary-300"
+                    }`} />
+                  )}
+                </Link>
+              );
+            })}
             <Link
               href="/reservations"
               className="ml-4 rounded-full bg-primary-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:bg-primary-700 hover:shadow-xl hover:-translate-y-0.5"
@@ -113,17 +131,24 @@ export default function Header() {
             mobileMenuOpen ? " opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="py-4 space-y-1 bg-white rounded-2xl shadow-xl my-2 px-4">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block px-4 py-3 text-neutral-700 font-medium rounded-xl hover:bg-primary-50 hover:text-primary-700 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+          <div className="py-4 space-y-1 bg-white rounded-2xl shadow-xl my-2 px-4 border border-neutral-100">
+            {navigation.map((item) => {
+              const active = isActive(item.href);
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`block px-4 py-3 font-medium rounded-xl transition-all ${
+                    active 
+                      ? "bg-primary-50 text-primary-700 border-l-4 border-primary-500 rounded-l-none" 
+                      : "text-neutral-700 hover:bg-neutral-50 hover:text-primary-600"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
             <div className="pt-4">
               <Link
                 href="/reservations"
