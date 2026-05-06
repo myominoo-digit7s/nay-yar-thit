@@ -1,4 +1,5 @@
 export type ServiceType = 'internal' | 'external';
+export type ServiceCategory = 'travel' | 'digital';
 
 export interface Service {
   id: string;
@@ -6,6 +7,7 @@ export interface Service {
   slug: string;
   description: string;
   type: ServiceType;
+  category: ServiceCategory;
   coverImage: string;
   isActive: boolean;
 
