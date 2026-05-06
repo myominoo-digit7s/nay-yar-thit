@@ -131,12 +131,12 @@ export default function AboutPage() {
                 NAY YAR THIT FUTURE COMPANY LIMITED
               </h2>
               <div className="space-y-4 text-neutral-600">
-                <p>
+                {/* <p>
                   Based in Tachileik, Shan State, Myanmar, NAY YAR THIT FUTURE
                   COMPANY LIMITED is a fully licensed travel agency and tour
                   operator dedicated to showcasing the wonders of Myanmar and
                   Southeast Asia to travelers from around the world.
-                </p>
+                </p> */}
                 <p>
                   Our name &quot;Nay Yar Thit&quot; embodies our vision of creating new
                   horizons in travel. We specialize in crafting authentic,
