@@ -18,7 +18,7 @@ export default function HomePage() {
       <HeroSection />
 
       {/* Popular Tours Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             tagline="Explore Our Tours"
@@ -54,13 +54,13 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Choose Us */}
       <WhyChooseUs />
 
       {/* Featured Destinations Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             tagline="Destinations"
@@ -96,7 +96,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonial / Stats Section */}
       <section className="py-20 bg-neutral-900 relative overflow-hidden">

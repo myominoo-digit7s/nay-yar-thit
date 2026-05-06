@@ -3,10 +3,10 @@ import Image from "next/image";
 
 const quickLinks = [
   { name: "Home", href: "/" },
-  { name: "Tours", href: "/tours" },
+  // { name: "Tours", href: "/tours" },
   { name: "Services", href: "/services" },
-  { name: "Destinations", href: "/destinations" },
-  { name: "Reservations", href: "/reservations" },
+  // { name: "Destinations", href: "/destinations" },
+  // { name: "Reservations", href: "/reservations" },
   { name: "About Us", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];

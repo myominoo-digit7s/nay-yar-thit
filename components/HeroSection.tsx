@@ -69,7 +69,7 @@ export default function HeroSection({
         </div>
 
         {/* Main Title */}
-        <h1 
+        <h1
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up"
           style={{ animationDelay: "200ms" }}
         >
@@ -77,7 +77,7 @@ export default function HeroSection({
         </h1>
 
         {/* Subtitle */}
-        <p 
+        <p
           className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto animate-fade-in-up"
           style={{ animationDelay: "300ms" }}
         >
@@ -85,11 +85,11 @@ export default function HeroSection({
         </p>
 
         {/* CTA Buttons */}
-        <div 
+        <div
           className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up"
           style={{ animationDelay: "400ms" }}
         >
-          <Link
+          {/* <Link
             href={primaryCTA.href}
             className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-600 px-8 py-4 text-white font-semibold shadow-lg hover:bg-primary-700 hover:shadow-xl transition-all hover:-translate-y-0.5"
           >
@@ -107,7 +107,7 @@ export default function HeroSection({
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
-          </Link>
+          </Link> */}
           <Link
             href={secondaryCTA.href}
             className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/30 px-8 py-4 text-white font-semibold hover:bg-white/10 backdrop-blur-sm transition-all"
@@ -118,7 +118,7 @@ export default function HeroSection({
 
         {/* Scroll Indicator */}
         {size === "full" && (
-          <div 
+          <div
             className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden"
             style={{ animationDelay: "1s" }}
           >
