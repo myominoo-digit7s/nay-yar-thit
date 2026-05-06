@@ -39,7 +39,7 @@ export const services: Service[] = [
     description: 'Provide complete services for international flights, ground transportation, and curated accommodation bookings, including visa assistance, to support entire travel systems.',
     type: 'internal',
     category: 'travel',
-    coverImage: '/images/services/travel_tour_section_01.jpg',
+    coverImage: '/images/services/travel_tour_section_03.jpg',
     isActive: true,
     seo: {
       title: 'Transportation & Lodging Logistics - Nay Yar Thit',
@@ -86,7 +86,7 @@ export const services: Service[] = [
     description: 'Provide comprehensive system evaluation and performance testing, including load testing, security audits, and rigorous functional verification.',
     type: 'internal',
     category: 'digital',
-    coverImage: '/images/services/digital_solution_section_01.jpg',
+    coverImage: '/images/services/digital_solution_section_03.jpg',
     isActive: true,
     seo: {
       title: 'Quality Assurance and Systems Testing - Nay Yar Thit',
