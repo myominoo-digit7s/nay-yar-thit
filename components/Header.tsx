@@ -3,22 +3,10 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-
-const navigation = [
-  { name: "Home", href: "/" },
-  // { name: "Tours", href: "/tours" },
-  { name: "Services", href: "/services" },
-  // { name: "Destinations", href: "/destinations" },
-  // { name: "Reservations", href: "/reservations" },
-  { name: "About Us", href: "/about" },
-  { name: "Contact", href: "/contact" },
-];
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,25 +16,15 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isActive = (path: string) => {
-    if (path === "/" && pathname !== "/") return false;
-    return pathname.startsWith(path);
-  };
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || mobileMenuOpen
-        ? "bg-white/95 backdrop-blur-md shadow-lg"
-        : "bg-transparent"
-        }`}
-    >
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || isOpen
+      ? "bg-white/95 backdrop-blur-md shadow-lg"
+      : "bg-transparent"
+      }`}>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center gap-3"
-          >
+          <Link href="/" className="flex items-center gap-3">
             <Image
               src="/logo.png"
               alt="NAY YAR THIT Logo"
@@ -55,103 +33,43 @@ export default function Header() {
               className="w-12 h-12 object-contain"
               priority
             />
-            <div className={`transition-colors ${scrolled || mobileMenuOpen ? "text-primary-700" : "text-white"
-              }`}>
+            <div className={`transition-colors ${scrolled || isOpen ? "text-primary-700" : "text-white"}`}>
               <span className="block text-xl font-bold tracking-tight">NAY YAR THIT</span>
-              {/*<span className="block text-xs font-normal tracking-wider opacity-80">
-                TRAVEL & TOURS
-              </span>*/}
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Nav */}
           <div className="hidden lg:flex lg:items-center lg:gap-8">
-            {navigation.map((item) => {
-              const active = isActive(item.href);
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`text-sm font-medium transition-all relative py-2 ${scrolled
-                    ? active ? "text-primary-600" : "text-neutral-700 hover:text-primary-500"
-                    : active ? "text-primary-300" : "text-white hover:text-primary-200"
-                    }`}
-                >
-                  {item.name}
-                  {active && (
-                    <span className={`absolute bottom-0 left-0 w-full h-0.5 rounded-full transition-all ${scrolled ? "bg-primary-600" : "bg-primary-300"
-                      }`} />
-                  )}
-                </Link>
-              );
-            })}
-            {/* <Link
-              href="/reservations"
-              className="ml-4 rounded-full bg-primary-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:bg-primary-700 hover:shadow-xl hover:-translate-y-0.5"
-            >
-              Book Now
-            </Link> */}
+            <Link href="/corporate#who-we-are" className={`text-sm font-medium transition-all relative py-2 ${scrolled ? "text-neutral-700 hover:text-primary-500" : "text-white hover:text-primary-200"}`}>Who We Are</Link>
+            <Link href="/corporate#services" className={`text-sm font-medium transition-all relative py-2 ${scrolled ? "text-neutral-700 hover:text-primary-500" : "text-white hover:text-primary-200"}`}>Services</Link>
+            <Link href="/corporate#about" className={`text-sm font-medium transition-all relative py-2 ${scrolled ? "text-neutral-700 hover:text-primary-500" : "text-white hover:text-primary-200"}`}>Values</Link>
+
           </div>
 
           {/* Mobile Menu Button */}
           <button
             type="button"
             className="lg:hidden p-2 rounded-lg transition-colors"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-expanded={mobileMenuOpen}
-            aria-label="Toggle navigation menu"
+            onClick={() => setIsOpen(!isOpen)}
           >
             <div className="w-6 h-5 relative flex flex-col justify-between">
-              <span
-                className={`w-full h-0.5 rounded-full transition-all duration-300 ${scrolled || mobileMenuOpen ? "bg-neutral-800" : "bg-white"
-                  } ${mobileMenuOpen ? "rotate-45 translate-y-2" : ""}`}
-              />
-              <span
-                className={`w-full h-0.5 rounded-full transition-all duration-300 ${scrolled || mobileMenuOpen ? "bg-neutral-800" : "bg-white"
-                  } ${mobileMenuOpen ? "opacity-0" : ""}`}
-              />
-              <span
-                className={`w-full h-0.5 rounded-full transition-all duration-300 ${scrolled || mobileMenuOpen ? "bg-neutral-800" : "bg-white"
-                  } ${mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-              />
+              <span className={`w-full h-0.5 rounded-full transition-all duration-300 ${scrolled || isOpen ? "bg-neutral-800" : "bg-white"} ${isOpen ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`w-full h-0.5 rounded-full transition-all duration-300 ${scrolled || isOpen ? "bg-neutral-800" : "bg-white"} ${isOpen ? "opacity-0" : ""}`} />
+              <span className={`w-full h-0.5 rounded-full transition-all duration-300 ${scrolled || isOpen ? "bg-neutral-800" : "bg-white"} ${isOpen ? "-rotate-45 -translate-y-2" : ""}`} />
             </div>
           </button>
         </div>
 
         {/* Mobile Menu */}
-        <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 ${mobileMenuOpen ? " opacity-100" : "max-h-0 opacity-0"
-            }`}
-        >
+        <div className={`lg:hidden overflow-hidden transition-all duration-300 ${isOpen ? "opacity-100" : "max-h-0 opacity-0"}`}>
           <div className="py-4 space-y-1 bg-white rounded-2xl shadow-xl my-2 px-4 border border-neutral-100">
-            {navigation.map((item) => {
-              const active = isActive(item.href);
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`block px-4 py-3 font-medium rounded-xl transition-all ${active
-                    ? "bg-primary-50 text-primary-700 border-l-4 border-primary-500 rounded-l-none"
-                    : "text-neutral-700 hover:bg-neutral-50 hover:text-primary-600"
-                    }`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              );
-            })}
-            {/* <div className="pt-4">
-              <Link
-                href="/reservations"
-                className="block w-full text-center rounded-full bg-primary-600 px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-primary-700 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Book Now
-              </Link>
-            </div> */}
+            <Link href="/corporate#who-we-are" className="block px-4 py-3 font-medium text-neutral-700 hover:bg-neutral-50 hover:text-primary-600 rounded-xl" onClick={() => setIsOpen(false)}>Who We Are</Link>
+            <Link href="/corporate#services" className="block px-4 py-3 font-medium text-neutral-700 hover:bg-neutral-50 hover:text-primary-600 rounded-xl" onClick={() => setIsOpen(false)}>Services</Link>
+            <Link href="/corporate#about" className="block px-4 py-3 font-medium text-neutral-700 hover:bg-neutral-50 hover:text-primary-600 rounded-xl" onClick={() => setIsOpen(false)}>Values</Link>
+
           </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
 }
