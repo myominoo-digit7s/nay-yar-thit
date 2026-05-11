@@ -13,7 +13,7 @@ const SoftwarePortfolio = () => {
         },
         {
             name: 'The Sports Corner (TSC)',
-            category: 'Mobile App',
+            category: 'Web & Mobile App',
             tech: 'Laravel, Flutter, REST API, Youtube',
             thumbnail: '/images/corporate/the-sports-corner.png',
             link: 'https://thesportscorners.com/'

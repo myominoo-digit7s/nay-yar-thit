@@ -67,11 +67,9 @@ export default function Footer() {
                 <Link href="/corporate#services" className="text-sm text-neutral-400 hover:text-primary-400 transition-colors">Services</Link>
               </li>
               <li>
-                <Link href="/corporate#about" className="text-sm text-neutral-400 hover:text-primary-400 transition-colors">About Us</Link>
+                <Link href="/corporate#about" className="text-sm text-neutral-400 hover:text-primary-400 transition-colors">Values</Link>
               </li>
-              <li>
-                <Link href="/corporate#contact" className="text-sm text-neutral-400 hover:text-primary-400 transition-colors">Contact</Link>
-              </li>
+
             </ul>
           </div>
 
@@ -144,17 +142,18 @@ export default function Footer() {
                 </svg>
                 <div className="flex flex-col gap-1">
                   <a
-                    href="mailto:nayyarthitfuture@gmail.com"
-                    className="text-sm text-neutral-400 hover:text-primary-400 transition-colors"
-                  >
-                    nayyarthitfuture@gmail.com
-                  </a>
-                  <a
                     href="mailto:support@nayyarthit.com"
                     className="text-sm text-neutral-400 hover:text-primary-400 transition-colors"
                   >
                     support@nayyarthit.com
                   </a>
+                  <a
+                    href="mailto:nayyarthitfuture@gmail.com"
+                    className="text-sm text-neutral-400 hover:text-primary-400 transition-colors"
+                  >
+                    nayyarthitfuture@gmail.com
+                  </a>
+
                 </div>
               </li>
             </ul>
@@ -171,10 +170,10 @@ export default function Footer() {
               reserved.
             </p>
             <div className="flex gap-6 text-sm text-neutral-500">
-              <Link href="#" className="hover:text-primary-400 transition-colors">
+              <Link href="/privacy" className="hover:text-primary-400 transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="#" className="hover:text-primary-400 transition-colors">
+              <Link href="/terms" className="hover:text-primary-400 transition-colors">
                 Terms of Service
               </Link>
             </div>
